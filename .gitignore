@@ -1,0 +1,9 @@
+*.log
+*.aux
+*.lot
+*.toc
+*.lof
+*.bbl
+compta.pdf
+*.out
+*.swp

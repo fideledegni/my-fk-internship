@@ -1,0 +1,48 @@
+\documentclass[a4paper,french]{report}
+\usepackage{geometry,babel,graphicx,lineno,pdfpages}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[color links=true,link color=black]{hyperref}
+\input{preambule}
+\begin{document}
+
+\author{Sylvain}
+\date{Compilé le \today}
+\title{Compta \theversion}
+
+\pagenumbering{alph}
+\maketitle
+
+\pagenumbering{arabic}
+\tableofcontents
+\newpage
+
+\input{intro}
+
+\chapter{Fonctionnement}
+\label{chap:func}
+\section{Les objets}
+\input{object.tex}
+\label{sec:object}
+
+\chapter{Fichier d'entrée}
+\section{Exemple complet}
+\input{input_file}
+
+\section{Entête}
+\input{input_entete}
+
+\section{Prévisionnel}
+\input{input_forecast}
+
+\section{Comptes}
+\input{input_accounts}
+
+\section{Données}
+\input{input_data}
+
+\appendix
+\chapter{Sortie pdf de l'exemple}
+\includepdf[pages=-]{./figs/Longjumeau_data}
+
+\end{document}
