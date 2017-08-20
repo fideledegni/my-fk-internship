@@ -1,25 +1,17 @@
-\graphicspath{{./figs/}}
-\makeatletter
-%% meta function
-\def\make@object#1{\expandafter\gdef\csname#1\endcsname{\object{#1}}}
-\newcommand{\object}[1]{\texttt{#1}}
-\make@object{forecast}
-\make@object{bank}
-\make@object{liquid}
-\make@object{saving}
-\make@object{operation}
-\newcommand{\catForecast}[1]{\textsf{#1}}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0.1pt}
+\fancyhead[L]{\includegraphics[width=3cm]{fundkis}\\}
+\fancyhead[R]{\includegraphics[width=2cm]{mines_saint-etienne}}
+\fancyfoot[L]{\scriptsize{DEGNI Fidèle}}
+\fancyfoot[C]{\footnotesize{\textbf{page \thepage/\pageref{fin}}}}
+\fancyfoot[R]{\scriptsize{Août 2017}}
 
-%%% versions
-\newcommand{\version}[3]{%
-\setcounter{vmajor}{#1}
-\setcounter{vmedium}{#2}
-\setcounter{vminor}{#3}
+\hypersetup{
+colorlinks=true, %colorise les liens
+breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+urlcolor= blue, %couleur des hyperliens
+linkcolor= black, %couleur des liens internes
+citecolor=black, %couleur des références
 }
-\newcounter{vmajor}
-\newcounter{vmedium}
-\newcounter{vminor}
-\newcommand{\theversion}{\thevmajor.\thevmedium.\thevminor}
 
-\version{1}{0}{2}
-\makeatother
+\graphicspath{{./figs/}}

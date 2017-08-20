@@ -12,7 +12,7 @@ figsources := $(vectorsources) $(rastersources) $(readysources)
 figures := $(vectorfigs) $(rasterfigs) $(readyfigs) $(texfigs)
 dirname  := $(shell basename $(shell pwd))
 
-texfinal = compta.pdf
+texfinal = fk-internship.pdf
 texroot = main
 
 bibfiles := $(wildcard *.bib)

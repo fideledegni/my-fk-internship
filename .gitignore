@@ -4,6 +4,8 @@
 *.toc
 *.lof
 *.bbl
-compta.pdf
+fk-internship.pdf
+main.pdf
 *.out
 *.swp
+*.gz

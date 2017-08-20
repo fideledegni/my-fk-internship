@@ -1,48 +1,103 @@
-\documentclass[a4paper,french]{report}
-\usepackage{geometry,babel,graphicx,lineno,pdfpages}
+\documentclass[a4paper, 12pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[color links=true,link color=black]{hyperref}
+\usepackage[french]{babel}
+%\usepackage{lmodern} % Pack de police
+%\usepackage{charter}
+%\usepackage{bookman}
+%\usepackage{palatino}
+%\usepackage{lineno,pdfpages}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{ulem, soul}
+\usepackage{url}
+\usepackage{eurosym}
+\usepackage{tikz}
+\usepackage[top=3cm, bottom=4cm, left=3cm, right=2.5cm]{geometry}
+%\usepackage{lastpage} % Nombre de pages totales
+\usepackage{fancyhdr}
+
 \input{preambule}
+
+\author{\textsc{Degni} Fidèle}
+\date{\today}
+\title{Rapport de stage}
+
+
+
+
 \begin{document}
 
-\author{Sylvain}
-\date{Compilé le \today}
-\title{Compta \theversion}
-
-\pagenumbering{alph}
 \maketitle
+\thispagestyle{empty}
 
-\pagenumbering{arabic}
-\tableofcontents
+\newpage % La mise en page faite par fancyhdr sur la 1re page est bizarre : je cette page qui ne sert à rien pour accueillir la bizarrerie !
+Page à enlever... fuck fancyhdr qui n'est pas foutu de faire de bons tête et pied de page dès la 1re page.
+
 \newpage
+\setcounter{page}{1} % Pour commencer la umérotation des pages ici
+\section*{Remerciements}
+\addcontentsline{toc}{section}{Remerciements}
+\input{input_remerciements}
 
-\input{intro}
+\newpage
+%\setcounter{tocdepth}{4} % Afficher jusqu'aux paragraphes dans le sommaire
+\renewcommand{\contentsname}{Sommaire} % Pour remplacer <<Table des matière>> par <<Sommaire>>
+\tableofcontents
 
-\chapter{Fonctionnement}
-\label{chap:func}
-\section{Les objets}
-\input{object.tex}
-\label{sec:object}
+\newpage
+\section*{Introduction} % Pour ne pas numéroter l'intro comme une section
+\addcontentsline{toc}{section}{Introduction} % Afficher l'intro dans la table des matières
+\input{input_introduction}
 
-\chapter{Fichier d'entrée}
-\section{Exemple complet}
-\input{input_file}
+% Fund KIS - Présentation
+\newpage
+\section{Fund KIS - Présentation}
+\input{input_introducing-fk}
 
-\section{Entête}
-\input{input_entete}
+% Le stage au sein de l'entreprise
+\vspace{1.5cm}
+\section{Le stage au sein de l'entreprise}
+\input{input_the-internship}
 
-\section{Prévisionnel}
-\input{input_forecast}
+% Les ouvriers
+\vspace{1.5cm}
+\section{Environnement de travail}
+\input{input_the-work-env}
 
-\section{Comptes}
-\input{input_accounts}
+% Conclusion
+\newpage
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+\input{input_closing}
 
-\section{Données}
-\input{input_data}
 
-\appendix
-\chapter{Sortie pdf de l'exemple}
-\includepdf[pages=-]{./figs/Longjumeau_data}
+% Bibliographie
+\newpage
+\subsection*{Bibliographie}
+\addcontentsline{toc}{subsection}{Bibliographie}
+
+\begin{itemize}
+\item \url{https://fundkis.com}
+\item \url{https://www.linkedin.com/company-beta/2381547}
+\item \url{https://www.docker.com}
+\item \url{https://getkong.org}
+\item \url{https://swagger.io}
+\end{itemize}
+\label{fin}
+
+%\newpage
+%\listoffigures % Table des figures
+%\listoftables
+
+% \newpage
+% \pagenumbering{alph}
+% \pagestyle{plain}
+% \appendix
+% \section{Schémas}
+% Schémas
+% \section{Tableaux}
+% Tableaux
 
 \end{document}
