@@ -2,11 +2,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
-%\usepackage{lmodern} % Pack de police
+\usepackage{enumitem}
+%\frenchbsetup{StandardLists=true} % Pour éviter de conflit avec enumitem qui traite aussi les itemize
 %\usepackage{charter}
-%\usepackage{bookman}
-%\usepackage{palatino}
-%\usepackage{lineno,pdfpages}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -14,8 +12,8 @@
 \usepackage{url}
 \usepackage{eurosym}
 \usepackage{tikz}
-\usepackage[top=3cm, bottom=4cm, left=3cm, right=2.5cm]{geometry}
-%\usepackage{lastpage} % Nombre de pages totales
+\usepackage{pifont} % font contenant des symboles sympas : appeler avec \ding{numéro}
+\usepackage[top=3cm, bottom=5cm, left=3cm, right=2.5cm]{geometry}
 \usepackage{fancyhdr}
 
 \input{preambule}
@@ -31,7 +29,9 @@
 \thispagestyle{empty}
 
 \newpage % La mise en page faite par fancyhdr sur la 1re page est bizarre : je cette page qui ne sert à rien pour accueillir la bizarrerie !
+{\color{white}
 Page à enlever... fuck fancyhdr qui n'est pas foutu de faire de bons tête et pied de page dès la 1re page.
+}
 
 \newpage
 \setcounter{page}{1} % Pour commencer la umérotation des pages ici
@@ -82,6 +82,8 @@ Page à enlever... fuck fancyhdr qui n'est pas foutu de faire de bons tête et p
 \item \url{https://www.docker.com}
 \item \url{https://getkong.org}
 \item \url{https://swagger.io}
+\item \url{http://microservices.io/patterns/microservices.html}
+\item \url{https://dzone.com/articles/microservices-architecture-what-when-how}
 \end{itemize}
 \label{fin}
 
