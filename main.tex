@@ -1,11 +1,10 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[12pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{enumitem}
 %\frenchbsetup{StandardLists=true} % Pour éviter de conflit avec enumitem qui traite aussi les itemize
 %\usepackage{charter}
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{ulem, soul}
@@ -13,8 +12,9 @@
 \usepackage{eurosym}
 \usepackage{tikz}
 \usepackage{pifont} % font contenant des symboles sympas : appeler avec \ding{numéro}
-\usepackage[top=3cm, bottom=5cm, left=3cm, right=2.5cm]{geometry}
+\usepackage[top=4cm, bottom=3cm, left=3cm, right=2.5cm, headheight=62pt]{geometry}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
 
 \input{preambule}
 
@@ -22,27 +22,23 @@
 \date{Du 29 mai 2017 au 25 août 2017}
 \title{Rapport de stage \\ Fund KIS}
 
-
 \begin{document}
 
 \maketitle
 \thispagestyle{empty}
 
-\newpage % La mise en page faite par fancyhdr sur la 1re page est bizarre : je cette page qui ne sert à rien pour accueillir la bizarrerie !
-{\color{white}
-Page à enlever... fuck fancyhdr qui n'est pas foutu de faire de bons tête et pied de page dès la 1re page.
-}
-
 \newpage
 \setcounter{page}{1} % Pour commencer la umérotation des pages ici
+%\setcounter{tocdepth}{4} % Afficher jusqu'aux paragraphes dans le sommaire
+\renewcommand{\contentsname}{Sommaire} % Pour remplacer <<Table des matière>> par <<Sommaire>>
+\tableofcontents
+\renewcommand{\thepage}{\arabic{page}}
+
+\newpage
 \section*{Remerciements}
 \addcontentsline{toc}{section}{Remerciements}
 \input{input_remerciements}
 
-\newpage
-%\setcounter{tocdepth}{4} % Afficher jusqu'aux paragraphes dans le sommaire
-\renewcommand{\contentsname}{Sommaire} % Pour remplacer <<Table des matière>> par <<Sommaire>>
-\tableofcontents
 
 \newpage
 \section*{Introduction} % Pour ne pas numéroter l'intro comme une section
@@ -76,6 +72,7 @@ Page à enlever... fuck fancyhdr qui n'est pas foutu de faire de bons tête et p
 \subsection*{Bibliographie}
 \addcontentsline{toc}{subsection}{Bibliographie}
 
+\footnotesize
 \begin{itemize}
 \item \url{https://fundkis.com}
 \item \url{https://www.linkedin.com/company-beta/2381547}
@@ -84,6 +81,8 @@ Page à enlever... fuck fancyhdr qui n'est pas foutu de faire de bons tête et p
 \item \url{https://swagger.io}
 \item \url{http://microservices.io/patterns/microservices.html}
 \item \url{https://dzone.com/articles/microservices-architecture-what-when-how}
+\item \url{https://fr.wikipedia.org/wiki/Representational_state_transfer}
+\item \url{https://blog.nicolashachet.com/niveaux/confirme/larchitecture-rest-expliquee-en-5-regles}
 \end{itemize}
 \label{fin}
 

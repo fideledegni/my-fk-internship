@@ -3,11 +3,30 @@ Fund Kis dispose d'un grand nombre de données qu'elle collecte ou calcule. La m
   \item API auto-documentée avec portail de documentation ;
   \item implémentation du protocol Swagger ou équivalent ;
   \item utilisation d'une API gateway gérant les problématiques de sécurité et de limites d'utilisations selon configurations ;
-  \item architecture micro-service utilisant Docker ;
+  \item \textbf{architecture microservices} utilisant Docker ;
   \item architecture multi-API, c'est-à-dire dynamique et facilitant l'ajout de nouvelles API ;
   \item \textit{Continuous deployement}.
 \end{itemize}
 
-L'aboutissement du projet consistait à remplacer les API utilisées auparavant par le portail par ces nouvelles API. De plus, le projet devait s'intégrer aux autres développements de Fund KIS. Il devait notamment utiliser un ensemble de \textit{packages} communs : accès aux données, algorithmes et authentification. Les développement devaient être faits en \textit{fullstack Javascript}: Mongo, Node, React, Angular...
+\vspace{3mm}
 
-Comme le travail à effectuer était plutôt conséquent pour être réalisé sereinement par un seul stagiaire de deuxième année en trois mois, Fund KIS a recruté deux stagiaires. J'ai donc travaillé avec une autre étudiante de l'EMSE sur le sujet.
+Une \textit{API REST} (ou \textit{RESTful API}, REST pour : \textit{REpresentational State Transfer}) est une API qui respecte un ensemble de conventions et de bonnes pratiques. (Nous avons défini ce qu'est une API dans la partie 2.2.3.) Une architecture \textit{REST} doit respecter certaines contraintes :
+\begin{itemize}[font=\color{blue}, label=\ding{43}]
+  \item \textbf{client-serveur} : le client joue le rôle d'interface utilisateur et le serveur stocke les données et peuvent évoluer indépendamment l'un de l'autre;
+  \item \textbf{serveur sans état} (\textit{stateless}) : chaque requête provenant du client contient toute l'information nécessaire pour résoudre la requête, le serveur n'a pas à garder d'information des requêtes précédentes ;
+  \item \textbf{cache} : pour gagner en performances, chaque réponse du serveur peut être mise en cache pour servir à des requêtes ultérieures demandant la même réponse ;
+  \item \textbf{interface uniforme} :
+    \begin{itemize}[font=\color{blue}, label=\ding{109}]
+      \item identification des ressources : chaque ressource possède un identifiant unique. Des \textit{URL} sont utilisées, comme \texttt{http://monsite.com/livres} pour afficher des livres, \texttt{http://monsite.com/livre/17} pour afficher un livre, ou encore \texttt{http://monsite.com/livres?fitlre=policier\&tri=asc} pour afficher des livres avec un certain filtre
+      \item identification des opérations : les opérations \textit{CRUD (create, read, update, delete)} sont réalisées avec des méthodes \textit{HTTP} comme \textit{POST} (\textit{create} ou supprimer), \textit{GET} (\textit{read} ou afficher), \textit{PUT} (\textit{update} mettre à joour), \textit{DELETE} (\textit{delete} ou supprimer)
+      \item représentation des ressources : les réponses renvoyées par le serveur sont des représentations des ressources sous le format demandé par le client : JSON, XML ou CSV par exemple
+      \item authentication : les authentications et authentifications sont effectuées via des jetons (ou \textit{token}) qu'on appelle souvent des \textit{API Keys} qui sont ajoutées aux requêtes par l'utilisateur
+    \end{itemize}
+  \item \textbf{en couche} : chaque composant a seulement accès aux composants de la couche avec laquelle il interagit directement.
+\end{itemize}
+
+\vspace{3mm}
+
+L'aboutissement du projet consistait à remplacer les API utilisées auparavant par le portail par ces nouvelles API. De plus, le projet devait s'intégrer aux autres développements de Fund KIS. Il devait notamment utiliser un ensemble de paquets communs : accès aux données, algorithmes et authentification. Les développement devaient être faits en \textit{fullstack Javascript}: Mongo, Node, React, Angular...
+
+Comme le travail à effectuer était plutôt conséquent pour être réalisé sereinement par un seul stagiaire de deuxième année en trois mois, Fund KIS a recruté deux stagiaires. J'ai donc travaillé avec une Leticia sur le sujet.
